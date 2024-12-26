@@ -14,7 +14,7 @@ export const POST = async (req: NextRequest) => {
     }
     await connect();
 
-    const user: UserType | null = await User.findOne({ email }).lean();
+    const user = (await User.findOne({ email }).lean()) as UserType | null;
     if (!user) {
       return createResponse("User not found", false, {}, 400);
     } else {

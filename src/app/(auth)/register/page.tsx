@@ -228,7 +228,7 @@ export default function Signup() {
                 {isLoading ? <CircleLoader /> : "Submit"}
               </button>
               <Link href={location?.includes("/trainer") ? "/trainer/login" : ROUTE.login} className=' text-sm block text-center text-[#667085] font-normal'>Already have an account? {" "}
-                <span className=' text-primary font-medium'>Sign In</span> </Link>
+                <span className=' text-primary font-medium'>Log In</span> </Link>
             </div>
 
           </div>

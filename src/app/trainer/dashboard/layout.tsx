@@ -4,7 +4,7 @@ import assets from '@/assets'
 import Image from 'next/image'
 import React, { ReactNode, useEffect, useState } from 'react'
 import { FaLocationDot } from "react-icons/fa6";
-import { LuUser } from "react-icons/lu";
+// import { LuUser } from "react-icons/lu";
 import { IoIosArrowDown } from "react-icons/io";
 import { FormInput } from '@/styles/styledComponents';
 import { IoSearch } from "react-icons/io5";
@@ -80,7 +80,7 @@ export default function GeneralLayout({ children }: Props) {
             <div className='relative'>
 
               <div onMouseLeave={() => setShow(false)} onMouseEnter={() => setShow(true)} className='bg-primary text-white rounded-full h-10 w-10 items-center justify-center'>
-                <LuUser size={24} />
+                {/* <LuUser size={24} /> */}
               </div>
               <div onMouseLeave={() => setShow(false)} onMouseEnter={() => setShow(true)} className={`${show ? "visible opacity-100 top-11" : "invisible opacity-0 top-full"}   duration-500 absolute  right-0 z-50 bg-white border border-primary rounded-2xl w-72 text-sm shadow `}>
                 <Link href={"/trainer/dashboard/profile"} className='px-3 py-4 items-center gap-2 hover:bg-primary hover:bg-opacity-20 duration-500 rounded-t-2xl cursor-pointer'>

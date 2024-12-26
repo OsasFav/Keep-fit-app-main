@@ -20,7 +20,8 @@ export const POST = async (req: NextRequest) => {
     }
     await connect();
 
-    const user: OtpType | null = await OtpModel.findOne({ email }).lean();
+    const user = (await OtpModel.findOne({ email }).lean()) as OtpType | null;
+
     if (!user) {
       return createResponse("User not found", false, {}, 400);
     } else {

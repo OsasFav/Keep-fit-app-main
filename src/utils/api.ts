@@ -59,8 +59,8 @@ api.interceptors.response.use(
       NProgress.done();
       const res = response.data;
       if (
-        response?.data?.message ===
-        ("Unauthorized" || "Credentials Do not match our Records")
+        response?.data?.message === "Unauthorized" || 
+        response?.data?.message === "Credentials Do not match our Records"
       ) {
         logOutAction();
       } else {
@@ -74,8 +74,8 @@ api.interceptors.response.use(
     NProgress.done();
     NProgress.remove();
     if (
-      error?.response?.data?.message ===
-      ("Unauthorized" || "Credentials Do not match our Records")
+      error?.response?.data?.message === "Unauthorized" || 
+      error?.response?.data?.message === "Credentials Do not match our Records"
     ) {
       logOutAction();
     }
