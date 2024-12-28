@@ -28,6 +28,18 @@ export default function GeneralLayout({ children }: Props) {
   const [domLoaded, setDomLoaded] = useState(false);
   const router = useRouter()
 
+  function getInitials(data) {
+    // Extract the first and last names using optional chaining
+    const firstName = data?.['data']?.first_name || '';
+    const lastName = data?.['data']?.last_name || '';
+    
+    // Get the initials
+    const initials = `${firstName[0] || ''}${lastName[0] || ''}`.toUpperCase();
+    
+    return initials;
+}
+
+
   // useEffect(() => {
   //   if (location && (location.includes("/login") || location.includes("/register"))) {
   //     localStorage.removeItem("lastVisitedRoute");
@@ -36,7 +48,6 @@ export default function GeneralLayout({ children }: Props) {
   //   }
   //   // eslint-disable-next-line react-hooks/exhaustive-deps
   // }, [location]);
-
 
   // const { data, isSuccess, isLoading } = useQuery("trainerProfile", getTrainerProfile);
   const { data, isLoading, isSuccess } = useQuery("profile", () => getProfile(location));
@@ -80,11 +91,14 @@ export default function GeneralLayout({ children }: Props) {
             <div className='relative'>
 
               <div onMouseLeave={() => setShow(false)} onMouseEnter={() => setShow(true)} className='bg-primary text-white rounded-full h-10 w-10 items-center justify-center'>
-                {/* <LuUser size={24} /> */}
+                <p>{getInitials(data)}</p>
               </div>
               <div onMouseLeave={() => setShow(false)} onMouseEnter={() => setShow(true)} className={`${show ? "visible opacity-100 top-11" : "invisible opacity-0 top-full"}   duration-500 absolute  right-0 z-50 bg-white border border-primary rounded-2xl w-72 text-sm shadow `}>
                 <Link href={"/trainer/dashboard/profile"} className='px-3 py-4 items-center gap-2 hover:bg-primary hover:bg-opacity-20 duration-500 rounded-t-2xl cursor-pointer'>
-                  <div className='bg-primary h-10 w-10 items-center justify-center text-lg text-white font-semibold rounded-full'>{getInitials(`${data?.['data']?.first_name} ${data?.['data']?.last_name}`)}</div>
+                  <div className='bg-primary h-10 w-10 items-center justify-center text-lg text-white font-semibold rounded-full'>
+                    {getInitials(data)}
+
+                  </div>
                   <div>
                     <p className='text-lg font-medium'>{`${data?.['data']?.first_name} ${data?.['data']?.last_name}`}</p>
                     <p className='text-xs'>{data?.['data']?.email}</p>

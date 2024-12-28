@@ -134,6 +134,9 @@ export default function GeneralLayout({ children }: Props) {
                 onMouseEnter={() => setShow(true)}
                 className="bg-primary text-white rounded-full h-10 w-10 items-center justify-center"
               >
+                {getInitials(
+                      `${data?.["data"]?.first_name} ${data?.["data"]?.last_name}`
+                    )}
                 {/* <LuUser size={24} /> */}
               </div>
               <div
