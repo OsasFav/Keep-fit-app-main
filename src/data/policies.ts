@@ -8,7 +8,7 @@ export const policies = {
     "Health and safety policy: First Aid kit is available. ",
     "First Aid kit is not available, please ensure to have yours available.",
   ],
-  equipnment: [
+  equipment: [
     "Equipment are available based on request and/or fitness need.",
     "Equipment is available, no need to bring yours to the session.",
     "No equipment available, please come with yours for your session.",

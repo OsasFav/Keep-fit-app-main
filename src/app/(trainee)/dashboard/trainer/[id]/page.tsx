@@ -167,9 +167,9 @@ export default function EachTrainer({}: Props) {
     () => getValue(policies.health),
     [policies.health]
   )
-  const randomEquipnmentValue = useMemo(
-    () => getValue(policies.equipnment),
-    [policies.equipnment]
+  const randomEquipmentValue = useMemo(
+    () => getValue(policies.equipment),
+    [policies.equipment]
   )
 
   const [isMounted, setIsMounted] = useState(false)
@@ -222,7 +222,7 @@ export default function EachTrainer({}: Props) {
               <span className="font-semibold block text-lg !mt-4">
                 Equipnment
               </span>
-              <li className="ml-4">{randomEquipnmentValue || ""}</li>
+              <li className="ml-4">{randomEquipmentValue || ""}</li>
             </ol>
           )}
 
