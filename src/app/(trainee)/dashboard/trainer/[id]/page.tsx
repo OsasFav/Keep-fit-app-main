@@ -220,7 +220,7 @@ export default function EachTrainer({}: Props) {
                 subject to availability.
               </li>
               <span className="font-semibold block text-lg !mt-4">
-                Equipnment
+                Equipment
               </span>
               <li className="ml-4">{randomEquipmentValue || ""}</li>
             </ol>
