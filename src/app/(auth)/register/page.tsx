@@ -227,7 +227,7 @@ export default function Signup() {
               <button type="submit" disabled={isLoading} className="w-full">
                 {isLoading ? <CircleLoader /> : "Submit"}
               </button>
-              <Link href={location?.includes("/trainer") ? "/trainer/login" : ROUTE.login} className=' text-sm block text-center text-[#667085] font-normal'>Already have an account? {" "}
+              <Link href={location?.includes("/trainer") ? "/trainer/login" : ROUTE.login} className=' text-sm block text-center text-[#667085] font-normal'>Already a trainer? {" "}
                 <span className=' text-primary font-medium'>Log In</span> </Link>
             </div>
 
