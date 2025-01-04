@@ -9,6 +9,7 @@ export const POST = async (req: NextRequest) => {
   try {
     const body = await req.json();
     const { email, password, isTrainer } = body;
+    
     if (!email || !password) {
       return createResponse(
         "Some field(s) are missing, input all fields",
@@ -22,6 +23,9 @@ export const POST = async (req: NextRequest) => {
     const user= isTrainer
     ? await Trainer.findOne({ email })
     : await User.findOne({ email });
+
+    console.log(user);
+    
 
     if (!user) {
       return createResponse("User not found", false, {}, 400);
