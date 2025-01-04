@@ -105,7 +105,6 @@ export default function EachTrainer({}: Props) {
   useEffect(() => {
     if (isSuccess) {
       setTrainer(data?.data)
-      console.log(data?.data)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSuccess])

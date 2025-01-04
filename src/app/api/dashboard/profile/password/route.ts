@@ -45,7 +45,7 @@ export const PATCH = async (req: NextRequest) => {
     if (body.isTrainer) {
       user = await Trainer.findOne({ _id: new ObjectId(userId) });
     } else user = await User.findOne({ _id: new ObjectId(userId) });
-    console.log(user, current_password, user?.password);
+    // console.log(user, current_password, user?.password);
     const isPasswordValid = await comparePasswords(
       current_password,
       user?.password
