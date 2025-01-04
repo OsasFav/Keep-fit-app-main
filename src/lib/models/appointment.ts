@@ -4,7 +4,7 @@ import {Schema, model, models} from "mongoose"
 
 
 const AppointmentSchema = new Schema({
-  user_id: {type: String, required: true, unique: true},
+  user_id: {type: String, required: true},
   num_of_participants: {type: String, required: true},
   training_type: {type: String, required: true},
   first_name: {type: String, required: true},

@@ -24,7 +24,6 @@ export const POST = async (req: NextRequest) => {
     ? await Trainer.findOne({ email })
     : await User.findOne({ email });
 
-    console.log(user);
     
 
     if (!user) {

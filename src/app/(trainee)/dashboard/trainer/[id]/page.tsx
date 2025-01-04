@@ -21,6 +21,8 @@ import { getAllTrainers } from "@/utils/req"
 import api from "@/utils/api"
 import toaster from "@/ui/toast"
 import { policies } from "@/data/policies"
+import { usePathname, useRouter } from "next/navigation"; 
+import { ROUTE } from "@/lib/route"
 
 type Props = {}
 
@@ -35,6 +37,7 @@ export default function EachTrainer({}: Props) {
     trainer_id: "",
   })
   const params = useParams()
+  const router = useRouter()
   const {
     data,
     isSuccess,
@@ -142,6 +145,7 @@ export default function EachTrainer({}: Props) {
             trainer_id: "",
           })
           toaster(res.message, "success")
+          router.push(ROUTE.dashboard)
         } else {
           toaster(
             res.message || "Something went wrong, please try again.",
